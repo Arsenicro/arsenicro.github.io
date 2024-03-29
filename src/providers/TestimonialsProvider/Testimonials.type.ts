@@ -22,3 +22,15 @@ export interface ITestimonialsJson {
     }[];
   }[];
 }
+
+export interface ITestimonials {
+  [semester: string]: {
+    name: string;
+    testimonials: {
+      id: string;
+      text: string;
+      highlighted: boolean;
+      sentiment: ISentiment;
+    }[];
+  }[];
+}

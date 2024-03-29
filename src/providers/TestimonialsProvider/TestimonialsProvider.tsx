@@ -5,14 +5,13 @@ import { v4 as uuid } from "uuid";
 import {
   ISentiment,
   ITestimonial,
+  ITestimonials,
   ITestimonialsJson,
 } from "./Testimonials.type";
 
 interface ITestimonialsContext {
-  testimonials: ITestimonial[];
+  testimonials: ITestimonials;
   highlightedTestimonials: ITestimonial[];
-  classes: string[];
-  semesters: string[];
 }
 
 export const TestimonialsContext = createContext<
@@ -24,29 +23,46 @@ function isSentiment(sentiment: string): sentiment is ISentiment {
 }
 
 function parseTestimonials(testimonialsJson: ITestimonialsJson) {
-  const testimonials: ITestimonial[] = [];
-  const semesters = new Set<string>();
-  const classes = new Set<string>();
+  const parsedTestimonials: ITestimonials = {};
 
   for (const semester in testimonialsJson) {
-    semesters.add(semester);
-    for (const course of testimonialsJson[semester]) {
-      classes.add(course.name);
-      for (const testimonial of course.testimonials) {
-        testimonials.push({
+    const coursesForSemester = testimonialsJson[semester];
+    const parsedCoursesForSemester = coursesForSemester.map((course) => {
+      const parsedTestimonials = course.testimonials.map((testimonial) => {
+        const parsedTestimonial = {
+          ...testimonial,
           id: uuid(),
-          text: testimonial.text,
-          highlighted: testimonial.highlighted,
           sentiment: isSentiment(testimonial.sentiment)
             ? testimonial.sentiment
             : "neutral",
+        };
+        return parsedTestimonial;
+      });
+      return { ...course, testimonials: parsedTestimonials };
+    });
+    parsedTestimonials[semester] = parsedCoursesForSemester;
+  }
+
+  return parsedTestimonials;
+}
+
+function flattenTestimonials(testimonials: ITestimonials) {
+  const flattenedTestimonials: ITestimonial[] = [];
+
+  for (const semester in testimonials) {
+    const coursesForSemester = testimonials[semester];
+    for (const course of coursesForSemester) {
+      for (const testimonial of course.testimonials) {
+        flattenedTestimonials.push({
+          ...testimonial,
           class: course.name,
           semester: semester,
         });
       }
     }
   }
-  return { testimonials, semesters, classes };
+
+  return flattenedTestimonials;
 }
 
 export default function TestimonialsProvider({
@@ -55,18 +71,17 @@ export default function TestimonialsProvider({
   children: React.ReactNode;
 }) {
   const contextValue = useMemo(() => {
-    const { testimonials, semesters, classes } =
-      parseTestimonials(testimonialsJson);
+    const testimonials = parseTestimonials(testimonialsJson);
 
     const highlightedTestimonials = shuffleArray(
-      testimonials.filter((testimonial) => testimonial.highlighted)
+      flattenTestimonials(testimonials).filter(
+        (testimonial) => testimonial.highlighted
+      )
     );
 
     return {
       testimonials,
       highlightedTestimonials,
-      classes: Array.from(classes),
-      semesters: Array.from(semesters),
     };
   }, []);
 
