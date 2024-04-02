@@ -27,10 +27,16 @@ export const Route = createRootRoute({
           <Link to="/teaching" className="[&.active]:font-bold">
             Teaching
           </Link>
+          <Link to="/blog" className="[&.active]:font-bold">
+            Blog
+          </Link>
         </div>
       </div>
       <div className="flex flex-col flex-grow px-6 md:px-20">
         <Outlet />
+      </div>
+      <div className="flex px-6 md:px-20 py-5 justify-center">
+        © 2024 Kamil Matuszewski
       </div>
       <Suspense>
         <TanStackRouterDevtools />

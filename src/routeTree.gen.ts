@@ -12,12 +12,18 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as TeachingImport } from './routes/teaching'
+import { Route as BlogImport } from './routes/blog'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
 const TeachingRoute = TeachingImport.update({
   path: '/teaching',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BlogRoute = BlogImport.update({
+  path: '/blog',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -34,6 +40,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/blog': {
+      preLoaderRoute: typeof BlogImport
+      parentRoute: typeof rootRoute
+    }
     '/teaching': {
       preLoaderRoute: typeof TeachingImport
       parentRoute: typeof rootRoute
@@ -43,6 +53,10 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([IndexRoute, TeachingRoute])
+export const routeTree = rootRoute.addChildren([
+  IndexRoute,
+  BlogRoute,
+  TeachingRoute,
+])
 
 /* prettier-ignore-end */
