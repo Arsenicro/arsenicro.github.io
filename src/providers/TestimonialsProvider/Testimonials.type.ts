@@ -8,29 +8,28 @@ export interface ITestimonialBase {
 }
 
 export interface ITestimonial extends ITestimonialBase {
-  class: string;
-  semester: string;
+  nameOfClass: string;
+  nameOfSemester: string;
 }
 
-export interface ITestimonialsJson {
-  [semester: string]: {
-    name: string;
+export type ITestimonialsJson = {
+  nameOfSemester: string;
+  classes: {
+    nameOfClass: string;
     testimonials: {
       text: string;
       highlighted: boolean;
       sentiment: string;
     }[];
   }[];
+}[];
+
+export interface ITestimonialObject {
+  [outerKey: string]: {
+    [innerKey: string]: ITestimonialBase[];
+  };
 }
 
-export interface ITestimonials {
-  [semester: string]: {
-    name: string;
-    testimonials: {
-      id: string;
-      text: string;
-      highlighted: boolean;
-      sentiment: ISentiment;
-    }[];
-  }[];
+export interface ITestimonialsCount {
+  [key: string]: number;
 }

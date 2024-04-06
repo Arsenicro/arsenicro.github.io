@@ -1,54 +1,34 @@
 import useTestimonials from "@/providers/TestimonialsProvider/useTestimonials";
-import { Testimonial } from "../Testimonial/Testimonial";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import TestimonialAccordion from "./TestimonialAccordion";
 
 export default function TestimonialList({ className }: { className?: string }) {
-  const { testimonials } = useTestimonials();
+  const testimonialsObject = useTestimonials();
 
   return (
     <div className={className}>
-      <Accordion type="single" collapsible>
-        {Object.entries(testimonials).map(([semester, semesterData]) => (
-          <AccordionItem key={semester} value={semester}>
-            <AccordionTrigger>
-              {semester} (
-              {semesterData.reduce(
-                (acc, course) => acc + course.testimonials.length,
-                0
-              )}
-              )
-            </AccordionTrigger>
-            <AccordionContent className="pl-2 md:pl-5">
-              <Accordion type="single" collapsible>
-                {semesterData.map((course) => (
-                  <AccordionItem key={course.name} value={course.name}>
-                    <AccordionTrigger>
-                      {course.name} ({course.testimonials.length})
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                        {course.testimonials.map((testimonial) => (
-                          <Testimonial
-                            key={testimonial.id}
-                            testimonial={testimonial.text}
-                            withoutScroll
-                            sentiment={testimonial.sentiment}
-                          />
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+      <Tabs defaultValue="bySemester" className="w-full">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="bySemester">By Semester</TabsTrigger>
+          <TabsTrigger value="byClass">By Class</TabsTrigger>
+        </TabsList>
+        <TabsContent value="bySemester">
+          <TestimonialAccordion
+            values={testimonialsObject.testimonialsBySemester}
+            outerOrder={testimonialsObject.semesters}
+            innerOrder={testimonialsObject.classes}
+            outerLength={testimonialsObject.semesterTestimonialsCount}
+          />
+        </TabsContent>
+        <TabsContent value="byClass">
+          <TestimonialAccordion
+            values={testimonialsObject.testimonialsByClass}
+            outerOrder={testimonialsObject.classes}
+            innerOrder={testimonialsObject.semesters}
+            outerLength={testimonialsObject.classTestimonialsCount}
+          />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }

@@ -14,8 +14,8 @@ export function Testimonials() {
           <Testimonial
             testimonial={testimonial.text}
             sentiment={testimonial.sentiment}
-            universityClass={testimonial.class}
-            semester={testimonial.semester}
+            universityClass={testimonial.nameOfClass}
+            semester={testimonial.nameOfSemester}
           />
         </CarouselItem>
       ))}
