@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Override default body background and text color */
+body {
+  @apply bg-gray-900 text-gray-300;
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 300%;
+    animation: animatedgradient 3s ease infinite alternate;
+  }
+
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --chart-1: 0 80% 50%;
+    --chart-2: 30 90% 60%;
+    --chart-3: 60 80% 60%;
+    --chart-4: 90 60% 50%;
+    --chart-5: 140 90% 35%;
+  }
+
+  .dark {
+    --chart-1: 0 70% 40%;
+    --chart-2: 30 80% 50%;
+    --chart-3: 60 70% 50%;
+    --chart-4: 90 50% 40%;
+    --chart-5: 140 70% 25%;
+  }
+}
