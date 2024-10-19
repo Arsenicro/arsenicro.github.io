@@ -59,7 +59,6 @@ function Index() {
                     key={testimonial.id}
                     testimonial={testimonial.text}
                     semester={testimonial.semester}
-                    className="min-w-[300px]"
                   />
                 ))}
                 {classData.generalTestimonials.map((testimonial) => (
@@ -67,7 +66,6 @@ function Index() {
                     key={testimonial.id}
                     testimonial={testimonial.text}
                     semester={testimonial.semester}
-                    className="min-w-[300px]"
                   />
                 ))}
               </div>
