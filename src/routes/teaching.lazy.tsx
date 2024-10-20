@@ -43,7 +43,7 @@ function Index() {
         />
       </div>
 
-      <Accordion type="single" collapsible>
+      <Accordion type="multiple">
         {classes.map((classData) => (
           <AccordionItem key={classData.id} value={classData.id}>
             <AccordionTrigger>{classData.nameOfClass}</AccordionTrigger>
