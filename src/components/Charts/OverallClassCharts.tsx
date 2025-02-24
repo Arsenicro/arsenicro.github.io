@@ -1,4 +1,4 @@
-import { OverallClass } from "@/providers/OpinionsProvider/Opinions.type";
+import { OverallOpinionClass } from "@/providers/OpinionsProvider/Opinions.type";
 import { OpinionsChart } from "./OpinionsChart";
 import {
   attendanceChartConfig,
@@ -8,7 +8,7 @@ import {
 } from "./configs";
 
 interface IProps {
-  classData: OverallClass;
+  classData: OverallOpinionClass;
 }
 
 export default function OverallClassCharts({ classData }: IProps) {

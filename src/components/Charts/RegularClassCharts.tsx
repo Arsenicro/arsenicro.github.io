@@ -1,4 +1,4 @@
-import { RegularClass } from "@/providers/OpinionsProvider/Opinions.type";
+import { RegularOpinionClass } from "@/providers/OpinionsProvider/Opinions.type";
 import { OpinionsChart } from "./OpinionsChart";
 import {
   averagePrepTimeChartConfig,
@@ -7,7 +7,7 @@ import {
 } from "./configs";
 
 interface IProps {
-  classData: RegularClass;
+  classData: RegularOpinionClass;
 }
 
 export default function RegularClassCharts({ classData }: IProps) {

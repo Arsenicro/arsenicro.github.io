@@ -12,13 +12,14 @@ interface Testimonial {
   highlighted: boolean;
 }
 
-interface ClassGeneral {
+interface SemesterClassGeneral {
   nameOfClass: string;
+  shouldExcludeFromOverall?: boolean;
   technicalSolutionTestimonials: Testimonial[];
   generalTestimonials: Testimonial[];
 }
 
-interface OverallClass extends ClassGeneral {
+interface OverallSemesterClass extends SemesterClassGeneral {
   type: "lecture";
   lectureAttendance: LectureAttendance;
   finalPrepTime: OverallPrepTime;
@@ -28,7 +29,11 @@ interface OverallClass extends ClassGeneral {
   technicalSolutions: TechnicalSolutions;
 }
 
-interface RegularClass extends ClassGeneral {
+export const isOverallSemesterClass = (
+  classData: SemesterClass
+): classData is OverallSemesterClass => classData.type === "lecture";
+
+interface RegularSemesterClass extends SemesterClassGeneral {
   type: "laboratory" | "seminar" | "exercises";
   averagePrepTime: AveragePrepTime;
   lectureHelpful: WouldRecommend;
@@ -36,9 +41,16 @@ interface RegularClass extends ClassGeneral {
   technicalSolutions: TechnicalSolutions;
 }
 
-type Class = OverallClass | RegularClass;
+export const isRegularSemesterClass = (
+  classData: SemesterClass
+): classData is RegularSemesterClass =>
+  classData.type === "laboratory" ||
+  classData.type === "seminar" ||
+  classData.type === "exercises";
+
+export type SemesterClass = OverallSemesterClass | RegularSemesterClass;
 
 export interface SemesterData {
   nameOfSemester: string;
-  classes: Class[];
+  classes: SemesterClass[];
 }

@@ -14,7 +14,7 @@ interface Testimonial {
   semester: string;
 }
 
-interface ClassGeneral {
+interface OpinionClassGeneral {
   id: string;
   nameOfClass: string;
   technicalSolutionTestimonials: Testimonial[];
@@ -47,21 +47,36 @@ interface RegularChartValues {
 export interface OverallSemester extends SemesterGeneral, OverallChartValues {}
 export interface RegularSemester extends SemesterGeneral, RegularChartValues {}
 
-export interface OverallClass extends ClassGeneral, OverallChartValues {
+export interface OverallOpinionClass
+  extends OpinionClassGeneral,
+    OverallChartValues {
   type: "lecture";
   semesters: OverallSemester[];
 }
 
-export interface RegularClass extends ClassGeneral, RegularChartValues {
+export const isOverallOpinionClass = (
+  classData: OpinionClass
+): classData is OverallOpinionClass => classData.type === "lecture";
+
+export interface RegularOpinionClass
+  extends OpinionClassGeneral,
+    RegularChartValues {
   type: "laboratory" | "seminar" | "exercises";
   semesters: RegularSemester[];
 }
 
-type Class = OverallClass | RegularClass;
+export const isRegularOpinionClass = (
+  classData: OpinionClass
+): classData is RegularOpinionClass =>
+  classData.type === "laboratory" ||
+  classData.type === "seminar" ||
+  classData.type === "exercises";
+
+export type OpinionClass = OverallOpinionClass | RegularOpinionClass;
 
 export interface Opinions {
   highlightedTestimonials: Testimonial[];
   wouldRecommendLecturer: WouldRecommend;
   lecturerHelpful: WouldRecommend;
-  classes: Class[];
+  classes: OpinionClass[];
 }

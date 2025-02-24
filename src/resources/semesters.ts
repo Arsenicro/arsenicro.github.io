@@ -2,6 +2,155 @@ import { SemesterData } from "@/resources/SemesterData.type";
 
 export const semesters: SemesterData[] = [
   {
+    nameOfSemester: "2024/25 zimowy",
+    classes: [
+      {
+        nameOfClass:
+          "Seminarium: Współczesne narzędzia do wytwarzania aplikacji webowych",
+        type: "seminar",
+        averagePrepTime: {
+          overTwoDays: 1,
+          twoDays: 1,
+          oneDay: 1,
+          twoHours: 1,
+          lessThanHour: 5,
+        },
+        lectureHelpful: {
+          definitelyNot: 0,
+          probablyNot: 0,
+          unsure: 1,
+          probably: 2,
+          definitely: 6,
+        },
+        lecturerHelpful: {
+          definitelyNot: 0,
+          probablyNot: 0,
+          unsure: 0,
+          probably: 2,
+          definitely: 7,
+        },
+        technicalSolutions: {
+          bad: 0,
+          average: 0,
+          good: 3,
+          veryGood: 6,
+        },
+        technicalSolutionTestimonials: [],
+        generalTestimonials: [],
+      },
+      {
+        nameOfClass: "Proseminarium: Agile Software Development",
+        type: "seminar",
+        averagePrepTime: {
+          overTwoDays: 1,
+          twoDays: 0,
+          oneDay: 1,
+          twoHours: 1,
+          lessThanHour: 7,
+        },
+        lectureHelpful: {
+          definitelyNot: 0,
+          probablyNot: 0,
+          unsure: 1,
+          probably: 4,
+          definitely: 5,
+        },
+        lecturerHelpful: {
+          definitelyNot: 0,
+          probablyNot: 0,
+          unsure: 0,
+          probably: 3,
+          definitely: 7,
+        },
+        technicalSolutions: {
+          bad: 0,
+          average: 0,
+          good: 3,
+          veryGood: 7,
+        },
+        technicalSolutionTestimonials: [
+          {
+            text: "Ustawić tematykę w pewnej kolejności",
+            highlighted: false,
+          },
+        ],
+        generalTestimonials: [
+          {
+            text: "Ciekawe seminarium, dobry wybór tematów i organizacja:) mimo, że zajęcia właściwie prowadzili studenci, to widać było wkład prowadzącego między innymi w dyskusje i zadawanie dobrych pytań (bez przerywania osobie prezentującej... taka umiejętność to też duży atut). Nie ma się do czego przyczepić i cieszę się, że takie proseminarium znalazło się w ofercie",
+            highlighted: true,
+          },
+          {
+            text: "Było super",
+            highlighted: false,
+          },
+        ],
+      },
+      {
+        nameOfClass: "(Ćwiczenia) Logika dla informatyków",
+        type: "exercises",
+        averagePrepTime: {
+          overTwoDays: 6,
+          twoDays: 4,
+          oneDay: 3,
+          twoHours: 0,
+          lessThanHour: 0,
+        },
+        lectureHelpful: {
+          definitelyNot: 1,
+          probablyNot: 3,
+          unsure: 3,
+          probably: 2,
+          definitely: 4,
+        },
+        lecturerHelpful: {
+          definitelyNot: 0,
+          probablyNot: 0,
+          unsure: 2,
+          probably: 4,
+          definitely: 7,
+        },
+        technicalSolutions: {
+          bad: 3,
+          average: 2,
+          good: 3,
+          veryGood: 5,
+        },
+        technicalSolutionTestimonials: [
+          {
+            text: "Bardzo wiele zawdzięczam filmikom powstałym w 2020/21. Krótka i zwięzła forma przekazywania wiedzy, na pewno wiele osób by bardzo doceniło, jeśli zostałyby one odświeżone. Repetytorium również prowadzone w bardzo dobry sposób, każda wątpliwość została rozwiana i szczegółowo wytłumaczona. Co do jakości nagrań to jestem zdania, że była ona wystarczająca i powinny te nagrania być publikowane.",
+            highlighted: false,
+          },
+          {
+            text: "Wprowadzenie bardzo rygorystycznego systemu punktowania zadań i groźby otrzymania punktów ujemnych stworzyły sytuację, w których zamiast spróbowania zrobić zadania, wolałem je pominąć, ponieważ popełnienie błędu lub złe zrozumienie treści skutkowały by odjęciem punktów z tego zadania, lub nawet skreśleniem całej deklaracji, co stanowiło by bardzo dużą stratę punktową. Dodatkowe warunki takie jak: zdobycie 15 punktów w nowym roku kalendarzowym połączone z faktem, że materiał na tym etapie zajęć było prawie że niezrozumiały, czy wprowadzenie przelicznika punktów, który powodował że dostawało się mniej punktów przy takim samym progu punktowym jak w ubiegłych latach, spowodowały, że logika stała się przedmiotem, na który poświęcałem większość czasu, przez co problematycznym było skupienie się na innych równie ważnych przedmiotach. Co do prowadzącego to zajęcia były prowadzone w dobry sposób, był jednym z niewielu, którzy pomagali zrozumieć materiał podczas ćwiczeń, a nie wymagał po prostu zrobienia zadania (np. Jan Otop, który czasem odrzucał rozwiązanie zaproponowane przez studenta i wymagał zrobienia zadania na jego sposób, którego student mógł nie rozumieć lub Tomasz Wierzbicki, który przykładał wagę do poprawności składniowej i ortograficznej pisanych na tablicy definicji przez co rozwiązanie zadania się przedłużało, czasem na tyle że było jedynym rozwiązanym podczas 2 godzin ćwiczeń, przez co stawały się one bezużyteczne)",
+            highlighted: false,
+          },
+        ],
+        generalTestimonials: [
+          {
+            text: "Chyba największym problemem jest rotacja prowadzących. Najlepiej mi się pracowało właśnie z Panem Matuszewskim i myślę, że dobrze by było gdyby osoby prowadzące ćwiczenia były ze swoimi grupami przynajmniej przez połowę czasu. Na pewno jakość przeprowadzanych ćwiczeń bardzo oscylowała w zależności od prowadzącego..",
+            highlighted: false,
+          },
+          {
+            text: "Ogólnie zajęcia prowadzone w dobry sposób. Widać, że prowadzący faktycznie się interesują tym tematem i potrafią ciekawie o tym opowiadać.",
+            highlighted: false,
+          },
+          {
+            text: "Dosyć stresujące zajęcia, dosyć ciężko samemu ocenić przed ćwiczeniami czy rozwiązania są poprawne, co zdecydowanie wpływa na liczbę deklarowanych zadań",
+            highlighted: false,
+          },
+          {
+            text: 'Ćwiczenia z logiki ciężko jest ocenić pozytywnie, można by długo wymieniać: opresyjny system deklaracji i zamiast próby rozumienia zadań których się nie deklarowało obserwowanie walki o punkty innych osób, wzór na przeliczanie punktów z listy który jedyne co przyniósł to trudności z zaliczeniem. Zadania z trudnych list zadań nadal były deklarowane w mniejszej ilości, a zdanie "nie robię zadania x bo i tak da mi tylko 0,6/0,4 pkt " usłyszeć można było przed każdymi ćwiczeniami, wielokrotnie nie deklarowałem zadania którego nie byłem na 100% pewny bo było długie i nie warte połowy punkta i ryzyka na grzyba. Robienie zadań z listy zwykle wyglądało w taki sposób że wybierało się 5 najłtawiejszych/najkrótszych zadań a te 2 trudne lub długie które były na każdej liście się pomijało bo sumarycznie były warte 1 pkt. Takim schematem kierowała się naprawdę prawie każda osoba z która rozmawiałem, a wszystko jest wina wadliwego systemu z grzybami i deklaracjami. System rotacji był sprawiedliwy i dobrze że taki istniał, ale zupełnie nie rozumiem braku tego samego podejścia do sprawdzania kolokwiów co na innych przedmiotach jak i egzaminach. Różnice w ocenach zadań głównie otwartych były niekiedy ogromne pomiędzy różnymi ćwiczeniowcami (głównie między panem Tomaszem Wierzbickim, a resztą, ale problem był ogólny) w mojej ocenie było to po prostu niesprawiedliwe i sam jestem osoba która dostała punkty za coś za co osoby w grupie np. Pana Tomasza Wierzbickiego już ich nie otrzymały. Wracając jeszcze do rozwiązywania zadań przy tablicy dodatkowym minusem był niekiedy sposób rozwiązywania zadań przez Pana Otopa gdy pod tablicą można było usłyszeć że "wszystko jest okej ale ja bym to zadanie robił w inny sposób" po czym tablica była mazana a osoba która robiła zadanie gubiąc się w nowej i zupełnie odmiennej idei dowodu dostawała grzyba i siadała spowrotem do ławki. Do pochwały zasługują jedynie(przynajmniej w mojej grupie) ćwiczenia z Panem Charatonikiem po których jako jedynych wyszedłem z wiekszą wiedzą niż na nie przyszedłem a wszystko za sprawą tego że na przykładzie zadnia zamiast kolejnej osoby walczącej o punkty zostały w świetny sposób wytłumaczone klasy abstrakcji. Podsumowując ćwiczenia z logiki wymagają na pewno dużej zmiany w samym systemie przeprowadzania ćwiczeń jak i oceniania kolokwiów a na pewno w tym drugim.',
+            highlighted: false,
+          },
+          {
+            text: 'Zajęcia rzadko pomagały w zrozumieniu materiału. Były to zdecydowanie najbardziej stresujące ćwiczenia w całym semestrze, przez co raczej nie czerpałem żadnej wiedzy z tego, co inni robili na tablicy, bo cały czas myślałem, czy na pewno wszystko dobrze zrobiłem, czy niczego nie zapomnę w stresie itd. Dopiero po pójściu do tablicy lub skończeniu przez kogoś innego ostatniego zadeklarowanego przeze mnie zadania, mogłem skupić się na tym, co dzieje się na zajęciach, a nie na moich notatkach. Dodatkowo system punktowy, który skutecznie zniechęca do robienia trudniejszych zadań, bo i tak dostanie się za nie mniej punktów niż za łatwiejsze, sprawia, że po prostu się je zostawia, bo nawet te "łatwe" zajmują ogrom czasu. Jedyne albo jedne z niewielu zajęć, na których czegoś się dowiedziałem, to były zajęcia z Profesorem Charatonikiem. Natomiast te, na których niczego się nie dowiedziałem to były zajęcia z Panem Wierzbickim.',
+            highlighted: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
     nameOfSemester: "2023/24 letni",
     classes: [
       {
