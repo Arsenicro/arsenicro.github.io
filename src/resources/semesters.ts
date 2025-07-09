@@ -2,6 +2,175 @@ import { SemesterData } from "@/resources/SemesterData.type";
 
 export const semesters: SemesterData[] = [
   {
+    nameOfSemester: "2024/25 letni",
+    classes: [
+      {
+        nameOfClass: "(Wykład) Kurs: Tworzenie aplikacji frontendowych",
+        type: "lecture",
+        lectureAttendance: {
+          none: 12,
+          rarely: 12,
+          irregularly: 15,
+          regularly: 15,
+        },
+        finalPrepTime: {
+          overTwoWeeks: 0,
+          week: 0,
+          severalDays: 2,
+          oneDay: 6,
+          none: 46,
+        },
+        wouldRecommendLecture: {
+          definitelyNot: 0,
+          probablyNot: 1,
+          unsure: 5,
+          probably: 10,
+          definitely: 38,
+        },
+        wouldRecommendLecturer: {
+          definitelyNot: 0,
+          probablyNot: 1,
+          unsure: 4,
+          probably: 18,
+          definitely: 31,
+        },
+        ectsFeedback: {
+          "+3": 0,
+          "+2": 0,
+          "+1": 1,
+          "0": 51,
+          "-1": 2,
+          "-2": 0,
+        },
+        technicalSolutions: {
+          bad: 0,
+          average: 1,
+          good: 14,
+          veryGood: 39,
+        },
+        technicalSolutionTestimonials: [
+          {
+            text: 'Chyba najlepszy sposób prowadzenia kursu jaki doświadczyłem na tych studiach. Brak dodatkowego stresu z przedmiotem, który nie jest obowiązkiem, osoby, które chcą się czegoś dowiedzieć na pewno ten przedmiot będzie dla nich dobry. Dla osób, które po prostu chcą zaliczyć ("liznąć" frontend) to też jest bardzo przyjemnie i bez stresu. POLECAM!',
+            highlighted: true,
+          },
+          {
+            text: "Wrzucanie na githuba wykładów i pracowni to super rozwiązanie, łatwo znaleźć wszystkie materiały i nie trzeba się przekopywać, żeby do nich dotrzeć. Zadanie na pracownie są sformułowane w ciekawy sposób i przyjemnie się je wykonywało, były zrozumiałe i konkretne.",
+            highlighted: false,
+          },
+          {
+            text: "Lepiej byłoby, gdyby wykłady odbywały się online lub były nagrywane",
+            highlighted: false,
+          },
+          {
+            text: "Klasa.",
+            highlighted: true,
+          },
+          {
+            text: "Bardzo dobrze prowadzony wykład, na którym krok po kroku pokazywano, jak tworzyć konkretne rzeczy. Materiały również były świetne.",
+            highlighted: false,
+          },
+        ],
+        generalTestimonials: [
+          {
+            text: "bardzo dobra organizacja list i komunikacja. Niestety wykład w czasie ćw z baz danych",
+            highlighted: false,
+          },
+          {
+            text: "Odpowiadał mi nowy system, dużo ciekawych dyskusji z tego wynikło. Niestety miałem kolizję i nie mogłem chodzić na wykłady, a szkoda.",
+            highlighted: false,
+          },
+          {
+            text: "Bardzo fajny wykład. Pomógł pokonać niechęć do webówki, i pokazać, że to może nawet być ciekawe. Zazwyczaj nie chodzę na wykłady, bo wszystko można znaleźć w internecie, ale ten naprawdę był tego warty",
+            highlighted: false,
+          },
+          {
+            text: "Jedne z lepiej prowadzonych wykładów na jakie uczęszczałam, bardzo dobrze się ich słuchało. Super przydatne były linki do stron związanych z konkretnym tematem, żeby móc wracać do nich i rozszerzać swoją wiedzę.",
+            highlighted: true,
+          },
+          {
+            text: "Najciekawszy wykład w letnim semestrze",
+            highlighted: true,
+          },
+          {
+            text: "Bardzo skrupulatne i wyczerpujące podejście do tematu.",
+            highlighted: false,
+          },
+          {
+            text: "Nigdy więcej przedstawiania przed salą",
+            highlighted: false,
+          },
+          {
+            text: "Jestem wielkim fanem wrzucania zadań na gita i serwera discordowego do szybkiego kontaktu z prowadzącymi",
+            highlighted: false,
+          },
+        ],
+      },
+      {
+        nameOfClass: "(Pracownia) Kurs: Tworzenie aplikacji frontendowych",
+        type: "laboratory",
+        averagePrepTime: {
+          overTwoDays: 0,
+          twoDays: 1,
+          oneDay: 9,
+          twoHours: 9,
+          lessThanHour: 2,
+        },
+        lectureHelpful: {
+          definitelyNot: 0,
+          probablyNot: 0,
+          unsure: 0,
+          probably: 7,
+          definitely: 14,
+        },
+        lecturerHelpful: {
+          definitelyNot: 0,
+          probablyNot: 0,
+          unsure: 1,
+          probably: 5,
+          definitely: 15,
+        },
+        technicalSolutions: {
+          bad: 0,
+          average: 1,
+          good: 3,
+          veryGood: 17,
+        },
+        generalTestimonials: [
+          {
+            text: "Naprawdę super.",
+            highlighted: false,
+          },
+          {
+            text: "Świetnie prowadzony przedmiot",
+            highlighted: true,
+          },
+        ],
+        technicalSolutionTestimonials: [
+          {
+            text: "Myślę, że wspólne omawianie rozwiązania zadania świetnie się sprawdza. Pozwala to na dogłębniejsze zrozumienie materiału (wiadomo, nie każdy słucha, ale kto chce może naprawdę z tego skorzystać). Dodatkowo można jeśli się prezentuje wyłapać błędy i zrozumieć, skąd się wzięły",
+            highlighted: false,
+          },
+          {
+            text: "Podobało mi się, że zadania były ciekawe i różnorodne. Ponadto forma prowadzenia pracowni była super. Zniwelowała ona stres związany z systemem deklaracji jednocześnie zachowując jej ideę - żeby student robił, a nie blefował. Do zadań siadałem z chęcią. Prowadzący dobrze obeznany w temacie, zawsze wszystko skrupulatnie omówiliśmy.",
+            highlighted: true,
+          },
+          {
+            text: "Pochwalam zastosowaną w tym semestrze na tym przedmiocie organizację pracowni - dzięki temu, że była prezentacja zadania na rzutniku nie miało się poczucia tracenia czasu czekając, aż prowadzący przejdzie po sali i sprawdzi zadanie.",
+            highlighted: false,
+          },
+          {
+            text: "Super pomysł, aby pracownie nie polegały tylko na oddawaniu zadań, ale również prezentacji i nauce. Dzięki prezentowaniu zadań faktycznie można było się czegoś nauczyć, zobaczyć inne możliwości rozwiązań. Dodatkowo takie zajęcia nie wiązały się ze stresem i bardzo fajnie się w nich uczestniczyło :)",
+            highlighted: false,
+          },
+          {
+            text: 'Uważam, że ta nowa formuła prowadzenia pracowni to był świetny pomysł. Dużo się na zajęciach nauczyłam dzięki takiemu "wspólnemu omawianiu". Też nie wydaje mi się, żebym odczuwała jakiś stres związany z prezentacją zadań.',
+            highlighted: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
     nameOfSemester: "2024/25 zimowy",
     classes: [
       {
